@@ -1,0 +1,41 @@
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="450" y2="250" stroke="black" />
+  <line x1="50" y1="250" x2="50" y2="50" stroke="black" />
+
+  <!-- Growth Line -->
+  <polyline
+    points="50,220 150,180 250,140 350,120 450,80"
+    fill="none"
+    stroke="black"
+    stroke-width="2" />
+
+  <!-- Points -->
+  <circle cx="50" cy="220" r="4" fill="black"/>
+  <circle cx="150" cy="180" r="4" fill="black"/>
+  <circle cx="250" cy="140" r="4" fill="black"/>
+  <circle cx="350" cy="120" r="4" fill="black"/>
+  <circle cx="450" cy="80" r="4" fill="black"/>
+
+  <!-- Week Labels -->
+  <text x="45" y="270" font-size="12">W1</text>
+  <text x="145" y="270" font-size="12">W2</text>
+  <text x="245" y="270" font-size="12">W3</text>
+  <text x="345" y="270" font-size="12">W4</text>
+  <text x="445" y="270" font-size="12">W5</text>
+
+  <!-- User Count Labels -->
+  <text x="40" y="210" font-size="12">3</text>
+  <text x="140" y="170" font-size="12">5</text>
+  <text x="240" y="130" font-size="12">7</text>
+  <text x="340" y="110" font-size="12">8</text>
+  <text x="440" y="70" font-size="12">10</text>
+
+  <!-- Increment Labels -->
+  <text x="95" y="190" font-size="12">+2</text>
+  <text x="195" y="150" font-size="12">+2</text>
+  <text x="295" y="130" font-size="12">+1</text>
+  <text x="395" y="95" font-size="12">+2</text>
+
+</svg>
