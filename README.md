@@ -19,3 +19,7 @@ https://baymax-77.github.io/BlockChain/barley-blog/index.html
 ## Blog 02.02 - Barley Update V1 : Barley Has Taken Root
 
 https://baymax-77.github.io/BlockChain/barley-blog/blog-2/index.html
+
+## Blogs Hub Page : 
+
+https://baymax-77.github.io/BlockChain/blogs-hub/index.html
