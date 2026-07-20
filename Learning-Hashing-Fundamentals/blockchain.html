@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Functions - Lesson 3: Blockchain Applications</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom colors */
+        :root {
+            --blue: #0d6efd;
+            --green: #198754;
+            --orange: #fd7e14;
+            --purple: #6f42c1;
+            --gray-light: #6c757d;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<main class="container mx-auto px-4 py-8">
+
+    <!-- Header -->
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold mb-2">🔗 Hash Functions in Blockchain</h1>
+        <p class="text-gray-600 text-lg">Understanding why Bitcoin and Ethereum use specific hash functions</p>
+    </header>
+
+    <!-- Bitcoin Section -->
+    <section class="mb-16">
+        <div class="flex flex-col md:flex-row items-center md:gap-12 bg-white p-6 rounded-xl shadow-lg">
+            <div class="flex-shrink-0 text-6xl">₿</div>
+            <div class="mt-4 md:mt-0">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-2">Bitcoin and SHA-256</h2>
+                <p class="mb-4">Bitcoin uses <strong>SHA-256</strong> to secure transactions through Proof-of-Work. This hash function is:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Battle-tested:</strong> analyzed for years before use</li>
+                    <li><strong>Computationally expensive:</strong> makes mining work hard</li>
+                    <li><strong>Secure:</strong> no known practical attacks</li>
+                </ul>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <p class="font-semibold">Fun Fact:</p>
+                    <p>Bitcoin actually applies SHA-256 twice for extra security!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethereum Section -->
+    <section class="mb-16">
+        <div class="flex flex-col md:flex-row-reverse items-center md:gap-12 bg-white p-6 rounded-xl shadow-lg">
+            <div class="flex-shrink-0 text-6xl">Ξ</div>
+            <div class="mt-4 md:mt-0">
+                <h2 class="text-2xl font-semibold text-purple-600 mb-2">Ethereum and Keccak-256</h2>
+                <p class="mb-4">Ethereum uses <strong>Keccak-256</strong> (SHA-3 variant) to secure its blockchain. Reasons for this choice:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Different design:</strong> "Sponge construction" vs SHA-2's Merkle-Damgård</li>
+                    <li><strong>Future-proof:</strong> algorithm differs from SHA-256</li>
+                    <li><strong>Security diversity:</strong> provides an alternative if SHA-256 is compromised</li>
+                </ul>
+                <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <p class="font-semibold">Fun Fact:</p>
+                    <p>Keccak won the NIST SHA-3 competition in 2012 after a 5-year public contest!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Process Comparison -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-center mb-8">How Each Blockchain Uses Hashes</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                <h3 class="font-semibold text-blue-600 mb-4">Bitcoin - Proof-of-Work</h3>
+                <ol class="list-decimal list-inside text-left">
+                    <li>Collect transactions in a block</li>
+                    <li>Compute SHA-256 hash of the block header</li>
+                    <li>Adjust nonce until hash meets difficulty target</li>
+                    <li>Block is added to blockchain, secure and verified</li>
+                </ol>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                <h3 class="font-semibold text-purple-600 mb-4">Ethereum - Smart Contracts & Keccak</h3>
+                <ol class="list-decimal list-inside text-left">
+                    <li>Transactions executed by Ethereum Virtual Machine (EVM)</li>
+                    <li>Keccak-256 generates unique identifiers for addresses and storage</li>
+                    <li>Ensures transaction integrity</li>
+                    <li>Blocks linked securely, resistant to tampering</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action: Try Hashing Yourself -->
+    <section class="mb-16 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Try Hashing Yourself!</h2>
+        <p class="text-gray-600 mb-6">Next, you'll see how a simple text becomes a hash. Change a single letter and watch the avalanche effect!</p>
+        <a href="hash-demo.html" class="inline-block bg-green-600 text-white px-6 py-3 rounded-full shadow hover:bg-green-700 transition">Go to Hash Demo →</a>
+    </section>
+
+</main>
+
+</body>
+</html>

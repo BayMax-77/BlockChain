@@ -1,0 +1,169 @@
+/* =======================
+   REUSABLE COMPONENTS
+   Para TODAS las páginas
+========================== */
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin: 8px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-blue {
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-green {
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-gray {
+    background-color: var(--color-light);
+    color: var(--text-gray);
+    border: 1px solid var(--border);
+}
+
+/* Cards */
+.definition-card {
+    background: var(--color-card);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.next-lesson-card {
+    background: var(--color-card);
+    border-radius: 12px;
+    padding: 30px;
+    border: 2px solid var(--green);
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Lesson Header */
+.lesson-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+
+/* Grid Layouts */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin: 1.5rem 0;
+}
+
+/* Lists */
+.usage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.usage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: var(--color-card);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease;
+}
+
+.usage-item:hover {
+    transform: translateX(5px);
+    border-color: var(--blue);
+}
+
+/* Understanding Check */
+.understanding-check {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+    text-align: center;
+}
+
+.check-buttons {
+    margin: 2rem 0;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.icon-small {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .properties-grid,
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+}

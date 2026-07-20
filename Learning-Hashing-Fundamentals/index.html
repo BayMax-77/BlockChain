@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hash Functions - Lesson 1: Introduction</title>
+	<link rel="stylesheet" href="styles/base.css">
+	<link rel="stylesheet" href="styles/components.css">
+	<link rel="stylesheet" href="styles/intro-pages.css">
+</head>
+<body>
+	<main class="container" id="container-index">
+		<!-- Header -->
+		<header class="lesson-header">
+			<h1>What is a Hash Function?</h1>
+			<p class="subtitle">A simple introduction to digital fingerprints</p>
+		</header>
+
+		<!-- Main Analogy -->
+		<section class="analogy-section">
+			<h2>Think of a hash as a digital fingerprint</h2>
+			<div class="analogy-box">
+				<div class="analogy-item">
+					<img src="assets/fingerprint.png" alt="Fingerprint icon" class="icon">
+					<h3>Human Fingerprint</h3>
+					<p>Unique to each person</p>
+				</div>
+				<div class="arrow">→</div>
+				<div class="analogy-item">
+					<img src="assets/biometric-security.png" alt="biometric-security" class="icon">
+					<h3>Digital Hash</h3>
+					<p>Unique to each piece of data</p>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!-- Simple Definition with Avalanche Effect -->
+		<section class="definition-section">
+			<h2>Simple Definition with Example</h2>
+			<div class="definition-card">
+				<p>A <strong>hash function</strong> takes any input (text, file, data) and creates a <strong>fixed-size fingerprint</strong> called a hash.</p>
+				
+				<!-- Single Hash Example -->
+				<div class="example">
+					<h3>Basic Example:</h3>
+					<div class="hash-demo">
+						<div class="input-side">
+							<div class="demo-label">Input (text):</div>
+							<div class="demo-box input-demo">
+								"hello"
+							</div>
+							<div class="arrow-down">↓</div>
+							<div class="demo-label">SHA-256 Algorithm:</div>
+							<div class="algorithm-box">
+								processes the input...
+							</div>
+							<div class="arrow-down">↓</div>
+							<div class="demo-label">Output (hash : always 64 chars):</div>
+							<div class="demo-box output-demo">
+								2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Avalanche Effect Demonstration -->
+				<div class="avalanche-demo">
+					<h3>The Avalanche Effect:</h3>
+					<p>See what happens when we change just <strong>one character</strong>:</p>
+					
+					<div class="comparison-grid">
+						<!-- Original -->
+						<div class="comparison-card">
+							<div class="comparison-header">
+								<div class="comparison-label">Original</div>
+								<div class="comparison-input">"hello"</div>
+							</div>
+							<div class="comparison-hash">
+								2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+							</div>
+						</div>
+
+						<!-- Changed -->
+						<div class="comparison-card">
+							<div class="comparison-header">
+								<div class="comparison-label">Changed (+ "!")</div>
+								<div class="comparison-input">"hello!"</div>
+							</div>
+							<div class="comparison-hash">
+								d4b0f5940a31fa5ffbc2ac2d17931d4c22d3e5ae06dbf5926167357e1f8a455d
+							</div>
+						</div>
+					</div>
+
+					<div class="avalanche-insight">
+						<div class="insight-icon">⚡</div>
+						<div class="insight-text">
+							<strong>Key Insight:</strong> Just adding "!" changed <strong>64 out of 64</strong> characters in the hash!<br>
+							This is called the <strong>Avalanche Effect</strong>.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+        <!-- Key Properties -->
+        <section class="properties-section">
+            <h2>Key Properties of Hash Functions</h2>
+            <div class="properties-grid">
+                <div class="property">
+                    <img src="assets/repeat-arrows.png" alt="Deterministic icon" class="icon">
+                    <h4>Deterministic</h4>
+                    <p>Same input → Same output every time</p>
+                </div>
+                <div class="property">
+                    <img src="assets/fixed-length.png" alt="Fixed length icon" class="icon">
+                    <h4>Fixed Length</h4>
+                    <p>Output always same size</p>
+                </div>
+                <div class="property">
+                    <img src="assets/domino-effect.png" alt="Avalanche effect icon" class="icon">
+                    <h4>Avalanche Effect</h4>
+                    <p>Tiny change → Completely different hash</p>
+                </div>
+                <div class="property">
+                    <img src="assets/one-way-right-arrow-signal.png" alt="One-way icon" class="icon">
+                    <h4>One-Way</h4>
+                    <p>Cannot get input from output</p>
+                </div>
+            </div>
+        </section>
+
+		<!-- Real World Uses -->
+		<section class="usage-section">
+			<h2>Where Hashes Are Used</h2>
+			<div class="usage-list">
+
+
+				<!-- NEW: Software Updates -->
+				<div class="usage-item">
+					<img src="assets/software-update.png" alt="Software update icon" class="icon-small">
+					<div>
+						<h4>Software Updates</h4>
+						<p><strong>How:</strong> Your phone or computer checks the hash of an update before installing it.</p>
+						<p><strong>Why hash helps:</strong> If the file was modified, the hash changes and the system detects it.</p>
+					</div>
+				</div>
+
+				
+				<div class="usage-item">
+					<img src="assets/data-security.png" alt="Security icon" class="icon-small">
+					<div>
+						<h4>Password Storage</h4>
+						<p><strong>How:</strong> Websites store hash of your password, not the password itself.</p>
+						<p><strong>Why hash helps:</strong> One-way property → attackers can't reverse it.</p>
+					</div>
+				</div>
+				<div class="usage-item">
+					<img src="assets/blockchain.png" alt="Blockchain icon" class="icon-small">
+					<div>
+						<h4>Blockchain</h4>
+						<p><strong>How:</strong> Each block contains hash of previous block.</p>
+						<p><strong>Why hash helps:</strong> Avalanche effect → changing data breaks the chain.</p>
+					</div>
+				</div>
+				<div class="usage-item">
+					<img src="assets/data-transform.png" alt="Data transform icon" class="icon-small">
+					<div>
+						<h4>File Verification</h4>
+						<p><strong>How:</strong> Download sites show hash so you can verify file integrity.</p>
+						<p><strong>Why hash helps:</strong> Deterministic → same file = same hash.</p>
+					</div>
+				</div>
+				<div class="usage-item">
+					<img src="assets/technology-network.png" alt="Network icon" class="icon-small">
+					<div>
+						<h4>Digital Signatures</h4>
+						<p><strong>How:</strong> Hash document, then encrypt hash with private key.</p>
+						<p><strong>Why hash helps:</strong> Fixed length → easier to sign than whole document.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <!-- Understanding Check -->
+        <section class="understanding-check">
+            <h2 id="questionHeader">Did You Understand?</h2>
+            <p>Make sure you understand before continuing.</p>
+            
+            <div class="check-buttons">
+                <button id="yes-btn" class="btn btn-green">
+                    Yes, I understand
+                </button>
+                <button id="no-btn" class="btn btn-gray">
+                    I need to review
+                </button>
+            </div>
+
+            <!-- Next Lesson (Hidden Initially) -->
+            <div id="next-lesson" class="hidden">
+                <div class="next-lesson-card">
+                    <h3>Great! Ready for the next lesson?</h3>
+                    <p><strong>Next: History of Hash Algorithms</strong></p>
+                    <p>Learn why some hashes are broken and which ones we use today.</p>
+                    <a href="history.html" class="btn btn-blue">
+                        Continue to Lesson 2 →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+	<!-- SIMPLE JS INLINE -->
+	<script>
+		// Step 1: Get elements
+		const yesButton = document.getElementById('yes-btn');
+		const noButton = document.getElementById('no-btn');
+		const nextLessonDiv = document.getElementById('next-lesson');
+		const understandingSection = document.querySelector('.understanding-check');
+		
+		// Step 2: Function to show next lesson
+		function showNextLesson() {
+			console.log("Showing next lesson");
+			nextLessonDiv.classList.remove('hidden');
+			yesButton.style.display = 'none';
+			noButton.style.display = 'none';
+			
+			// Hide the question text too
+			const questionHeader = document.querySelector('#questionHeader')
+			const questionText = understandingSection.querySelector('p');
+			if (questionText) {
+				questionText.style.display = 'none';
+			}
+			if (questionHeader) {
+				questionHeader.style.display = 'none';
+			}
+			
+			// Save to browser storage
+			localStorage.setItem('lesson1_complete', 'true');
+		}
+		
+		// Step 3: Function for review
+		function askToReview() {
+			console.log("User needs review");
+			alert("Take your time to review the 4 key properties above. They are the most important!");
+		}
+		
+		// Step 4: Add click events
+		yesButton.addEventListener('click', showNextLesson);
+		noButton.addEventListener('click', askToReview);
+		
+		// Step 5: Check if already completed
+		if (localStorage.getItem('lesson1_complete') === 'true') {
+			showNextLesson();
+		}
+	</script>
+</body>
+</html>

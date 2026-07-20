@@ -1,0 +1,299 @@
+/* ============================================================
+   HashGuard Lite
+   hash_management.css
+   ------------------------------------------------------------
+   This file contains all styles related to hash generation.
+
+   Contents
+
+   1. Hash toolbar
+   2. Hash algorithm buttons
+   3. Generate button
+   4. Hash result
+   5. Copy button
+   6. Responsive
+   ============================================================ */
+
+
+
+/* ============================================================
+   HASH TOOLBAR
+   ============================================================ */
+
+.hash-toolbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+/* ============================================================
+   HASH ALGORITHMS
+   ============================================================ */
+
+.algorithm-selector {
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.algorithm-button {
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    border: 1px solid #d6d6d6;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+}
+
+
+.algorithm-button:hover {
+
+    border-color: #f7931a;
+
+    color: #f7931a;
+
+}
+
+
+.algorithm-button.active {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f9a826,
+            #d97706
+        );
+
+    color: white;
+
+    border-color: transparent;
+
+    box-shadow:
+
+        0 6px 18px rgba(247,147,26,.30);
+
+}
+
+
+
+/* ============================================================
+   GENERATE HASH BUTTON
+   ============================================================ */
+
+.primary-button {
+
+    padding: 13px 28px;
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    box-shadow:
+
+        0 8px 20px rgba(37,99,235,.30);
+
+}
+
+
+.primary-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 12px 25px rgba(37,99,235,.40);
+
+}
+
+
+
+/* ============================================================
+   HASH RESULT
+   ============================================================ */
+
+#hashResultSection {
+
+    margin-top: 45px;
+
+}
+
+
+.hash-box {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #172033,
+            #0f172a
+        );
+
+    border-radius: 14px;
+
+    padding: 18px 22px;
+
+    border: 1px solid #263043;
+
+    overflow: hidden;
+
+}
+
+
+#hash {
+
+    flex: 1;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: #4ade80;
+
+    font-family:
+
+        Consolas,
+        Monaco,
+        monospace;
+
+    font-size: 15px;
+
+}
+
+
+
+/* ============================================================
+   COPY BUTTON
+   ============================================================ */
+
+.copy-button {
+
+    flex-shrink: 0;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    color: white;
+
+    font-size: 16px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: .2s;
+
+}
+
+
+.copy-button:hover {
+
+    background: rgba(255,255,255,.18);
+
+}
+
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 850px) {
+
+    .hash-toolbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 25px;
+
+    }
+
+    .algorithm-selector {
+
+        justify-content: center;
+
+    }
+
+    .primary-button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .algorithm-selector {
+
+        display: grid;
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+}

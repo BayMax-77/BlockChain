@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Hash Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8 text-center">
+    <h1 class="text-3xl font-bold mb-2">Interactive Hash Demo</h1>
+    <p class="text-lg">See step by step how a simple hash is calculated. Learn the avalanche effect interactively!</p>
+  </header>
+
+  <main class="container mx-auto p-6 space-y-8">
+
+    <!-- Cronograma de pasos -->
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Hashing Steps Overview</h2>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700">
+        <li><strong>Convert each character to ASCII code.</strong></li>
+        <li><strong>Sum sequentially each value with the current sum.</strong></li>
+        <li><strong>Apply modulo 256 to keep the value within 0-255.</strong></li>
+        <li><strong>Convert the final number to hexadecimal.</strong></li>
+        <li><strong>Observe the avalanche effect: even a small change drastically changes the hash!</strong></li>
+      </ol>
+    </section>
+
+    <!-- Input Section -->
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Type Your Text</h2>
+      <input id="text-input" type="text" placeholder="Enter text to hash" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </section>
+
+    <!-- Step-by-Step Display -->
+    <section class="bg-white p-6 rounded-lg shadow-md space-y-4">
+      <h2 class="text-2xl font-semibold text-blue-600">Step-by-Step Calculation</h2>
+      <div id="steps-container" class="space-y-2">
+        <p class="text-gray-500">Your steps will appear here as you type.</p>
+      </div>
+    </section>
+
+    <!-- Final Hash Output -->
+    <section class="bg-white p-6 rounded-lg shadow-md text-center">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-2">Hash Result</h2>
+      <div id="hash-output" class="bg-gray-100 text-xl font-mono p-4 rounded-lg border border-gray-300">--</div>
+    </section>
+
+    <!-- Avalanche Effect Explanation -->
+    <section class="bg-orange-50 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-orange-600 mb-2">Avalanche Effect</h2>
+      <p class="text-gray-700">Notice how changing even a single character in your input completely changes the hash. This is what makes hash functions secure: small differences propagate unpredictably!</p>
+    </section>
+
+    <!-- SHA-256 Explanation -->
+    <section class="bg-green-50 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-green-600 mb-2">Why SHA-256 is Much Stronger</h2>
+      <p class="text-gray-700 mb-4">
+        Our demo uses a simple hash function for learning. Real hash functions like <strong>SHA-256</strong> are far more complex and secure.
+      </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li><strong>Length and Output:</strong> Produces a 256-bit (32-byte) hash.</li>
+        <li><strong>Complex Operations:</strong> Uses bitwise operations, modular additions, and logical functions on 512-bit input blocks.</li>
+        <li><strong>Compression Function:</strong> Input is split, expanded, and combined through multiple rounds.</li>
+        <li><strong>Avalanche Effect:</strong> A single bit change flips roughly half of the output bits unpredictably.</li>
+        <li><strong>Security:</strong> Resistant to collisions and attacks, ideal for blockchain and digital signatures.</li>
+      </ul>
+      <p class="text-gray-700 mt-4">
+        SHA-256 is used in Bitcoin and many secure systems. The core idea is the same as our demo: transforming input into a fixed-length fingerprint.
+      </p>
+      <p class="text-gray-700 mt-2">
+        For those who want to explore SHA-256 in full detail, check out <a href="https://sha256algorithm.com/" target="_blank" class="text-blue-600 underline">sha256algorithm.com</a>.
+      </p>
+    </section>
+
+    <!-- Back to Intro Button -->
+    <div class="text-center">
+      <a href="index.html" class="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">← Back to Introduction</a>
+    </div>
+
+  </main>
+
+  <script>
+    const input = document.getElementById('text-input');
+    const stepsContainer = document.getElementById('steps-container');
+    const hashOutput = document.getElementById('hash-output');
+
+    function simpleHash(text) {
+      let steps = [];
+      let currentSum = 0;
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const ascii = char.charCodeAt(0);
+        currentSum = (currentSum + ascii) % 256;
+        steps.push({char, ascii, currentSum});
+      }
+      const finalHash = currentSum.toString(16).padStart(2, '0');
+      return {steps, finalHash};
+    }
+
+    function updateDisplay() {
+      const text = input.value;
+      if (text.length === 0) {
+        stepsContainer.innerHTML = '<p class="text-gray-500">Your steps will appear here as you type.</p>';
+        hashOutput.textContent = '--';
+        return;
+      }
+      const {steps, finalHash} = simpleHash(text);
+      stepsContainer.innerHTML = steps.map(s => `
+        <div class="flex justify-between bg-gray-50 p-2 rounded border border-gray-200">
+          <div><strong>Char:</strong> '${s.char}'</div>
+          <div><strong>ASCII:</strong> ${s.ascii}</div>
+          <div><strong>Current Sum:</strong> ${s.currentSum}</div>
+        </div>
+      `).join('');
+      hashOutput.textContent = finalHash;
+    }
+
+    input.addEventListener('input', updateDisplay);
+  </script>
+
+</body>
+</html>

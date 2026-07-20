@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash Functions - Lesson 2: The History of Hashing</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Base CSS (solo lo que necesitemos) -->
+  <link rel="stylesheet" href="styles/base.css">
+  <!-- Opcional: componentes CSS antiguos solo si es necesario -->
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <main class="container mx-auto px-4 py-8">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-2">📖 The Story of Hash Functions</h1>
+      <p class="text-gray-600 text-lg">From simple checksums to blockchain security - a journey through time</p>
+    </header>
+
+    <!-- =========================
+         INTRODUCTION: THE EARLY DAYS
+    ========================== -->
+    <section class="mb-12 bg-white rounded-xl shadow p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="assets/desktop-computer.png" alt="Old computer" class="w-24 h-24">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">The Early Days of Digital Integrity</h2>
+          <p>In the early 1990s, the internet was growing rapidly. People needed ways to verify files downloaded from bulletin boards and early websites to ensure they weren't corrupted or tampered with.</p>
+          <div class="flex items-start mt-4 bg-gray-100 p-4 rounded-lg border-l-4 border-blue-500">
+            <div class="text-2xl mr-3">💾</div>
+            <p><strong>Historical Context:</strong> Dial-up modems, 14.4kbps speeds, and frequent transmission errors made simple checksums insufficient for data integrity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         MD5: THE QUICK FIX
+    ========================== -->
+    <section class="mb-12 bg-white rounded-xl shadow p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="assets/quick-coding.png" alt="Quick coding" class="w-24 h-24">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">MD5: The "Quick Fix" That Lasted Too Long</h2>
+          <p><strong>The Story:</strong> Ronald Rivest created MD5 in 1992 in just two weeks, as an improvement over MD4, to produce 128-bit fingerprints for files. Fast and simple, it quickly became widely used.</p>
+
+          <!-- Collision Example -->
+          <div class="collision-demo mt-6 border-t-4 border-dashed border-orange-400 pt-4">
+            <h4 class="text-xl font-semibold mb-2">The Fatal Flaw: Collisions</h4>
+            <p>In 2004, researchers generated two different files with the same MD5 hash:</p>
+            <div class="grid md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-gray-50 p-4 rounded border">
+                <div class="font-semibold mb-1">File A (innocent)</div>
+                <code class="block bg-gray-100 p-2 rounded">Hello, I am a harmless document.</code>
+                <div class="text-green-600 font-bold mt-2">MD5: d41d8cd98f00b204e9800998ecf8427e</div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded border">
+                <div class="font-semibold mb-1">File B (malicious)</div>
+                <code class="block bg-gray-100 p-2 rounded">Warning: Virus detected! (fake)</code>
+                <div class="text-green-600 font-bold mt-2">MD5: d41d8cd98f00b204e9800998ecf8427e</div>
+              </div>
+            </div>
+            <p class="mt-4 text-red-600 font-semibold flex items-center gap-2">
+              <img src="assets/broken_lock.png" alt="Broken lock" class="w-6 h-6"> Security Implication: Attackers could create malicious files that appeared legitimate!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SHA-1: THE GOVERNMENT STANDARD
+    ========================== -->
+    <section class="mb-12 bg-white rounded-xl shadow p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="assets/fingerprint.png" alt="Fingerprint" class="w-24 h-24">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">SHA-1: The NSA's Standard</h2>
+          <p><strong>The Story:</strong> Designed by the NSA in 1995 to replace MD5, SHA-1 produced 160-bit hashes and became the U.S. government standard.</p>
+          <div class="flex items-start mt-4 bg-gray-100 p-4 rounded-lg border-l-4 border-yellow-500">
+            <div class="text-2xl mr-3">📚</div>
+            <p><strong>Widespread Adoption:</strong> Used in SSL certificates, Git, and various security protocols for more than 20 years.</p>
+          </div>
+          <div class="impact-box mt-4 bg-red-100 p-4 rounded border-l-4 border-red-600 flex items-start gap-3">
+            <div class="text-2xl">💥</div>
+            <p><strong>The Day SHA-1 Broke (Feb 23, 2017):</strong> Google researchers demonstrated practical collisions, reducing expected security time from 110 years to just 10 days with modern cloud computing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SHA-256: BITCOIN
+    ========================== -->
+    <section class="mb-12 bg-white rounded-xl shadow p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="assets/bitcoin_logo.png" alt="Bitcoin" class="w-24 h-24">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">SHA-256: Bitcoin's Choice</h2>
+          <p>After SHA-1 weaknesses, the NSA released SHA-2 in 2001, including SHA-256. Longer outputs and stronger security made it suitable for digital currencies like Bitcoin.</p>
+          <div class="flex items-start mt-4 bg-gray-100 p-4 rounded-lg border-l-4 border-green-500 gap-3">
+            <div class="text-2xl">₿</div>
+            <div>
+              <h4 class="font-semibold mb-1">Why Bitcoin Chose SHA-256</h4>
+              <ul class="list-disc ml-5 text-gray-700">
+                <li>Battle-tested: SHA-256 had been analyzed for 8 years</li>
+                <li>Computationally expensive: Suitable for proof-of-work</li>
+                <li>Secure: No practical attacks known</li>
+              </ul>
+              <p class="mt-2 text-sm text-gray-600">Bitcoin actually hashes twice: once on the data, then again on the result for extra security.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SHA-3: ETHEREUM
+    ========================== -->
+    <section class="mb-12 bg-white rounded-xl shadow p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="assets/Ethereum.png" alt="Ethereum" class="w-24 h-24">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">SHA-3 and Ethereum's Path</h2>
+          <p>SHA-3 (Keccak) was standardized in 2015 after a public NIST competition. Ethereum adopted it for security diversity and future-proofing.</p>
+          <div class="flex items-start mt-4 bg-gray-100 p-4 rounded-lg border-l-4 border-purple-500 gap-3">
+            <div class="text-2xl">Ξ</div>
+            <div>
+              <h4 class="font-semibold mb-1">Why Ethereum Chose Keccak-256</h4>
+              <ul class="list-disc ml-5 text-gray-700">
+                <li>Different design: Sponge construction vs SHA-2 Merkle-Damgård</li>
+                <li>Future-proof: Completely different from SHA-256</li>
+                <li>Security diversity: Ethereum remains secure even if SHA-256 is broken</li>
+              </ul>
+              <p class="mt-2 text-sm text-gray-600">Note: Ethereum uses Keccak-256, slightly different from the finalized SHA-3 standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TIMELINE
+    ========================== -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Hash Function Timeline</h2>
+      <div class="relative max-w-5xl mx-auto before:absolute before:w-1 before:h-full before:bg-blue-300 before:left-1/2 before:-translate-x-1/2">
+        <!-- Timeline Events -->
+        <div class="flex flex-col md:flex-row md:justify-between relative mb-8">
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">1992</div>
+            <p>MD5 Created</p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-yellow-400 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">1995</div>
+            <p>SHA-1 Released</p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">2004</div>
+            <p>MD5 Broken</p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">2009</div>
+            <p>Bitcoin Launches</p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">2015</div>
+            <p>SHA-3 Standardized</p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/5 text-center">
+            <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mb-2">2017</div>
+            <p>SHA-1 Collision</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TAKEAWAYS
+    ========================== -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6 text-center">What We've Learned</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center hover:shadow-lg transition-transform transform hover:-translate-y-2">
+          <div class="text-3xl mb-2">⏱️</div>
+          <h4 class="text-blue-600 font-semibold mb-1">Time Changes Security</h4>
+          <p>What's secure today may be broken tomorrow as computing power increases.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center hover:shadow-lg transition-transform transform hover:-translate-y-2">
+          <div class="text-3xl mb-2">🎯</div>
+          <h4 class="text-blue-600 font-semibold mb-1">Right Tool for the Job</h4>
+          <p>Different blockchains choose different hashes based on their specific needs.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center hover:shadow-lg transition-transform transform hover:-translate-y-2">
+          <div class="text-3xl mb-2">🔍</div>
+          <h4 class="text-blue-600 font-semibold mb-1">Research Matters</h4>
+          <p>Public competitions and analysis help find weaknesses before attackers do.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center hover:shadow-lg transition-transform transform hover:-translate-y-2">
+          <div class="text-3xl mb-2">🔄</div>
+          <h4 class="text-blue-600 font-semibold mb-1">Evolution Continues</h4>
+          <p>New algorithms like BLAKE3 offer even better performance for modern needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         UNDERSTANDING CHECK
+    ========================== -->
+    <section class="mb-12 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Did You Follow the Story?</h2>
+      <p class="mb-6">Make sure you understand why hash functions evolve and how history affects today's security.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mb-6">
+        <button id="yes-btn" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition">Yes, I understand the history</button>
+        <button id="no-btn" class="bg-gray-400 text-white px-6 py-3 rounded-lg hover:bg-gray-500 transition">I need to review the story</button>
+      </div>
+      <div id="next-lesson" class="hidden">
+        <div class="bg-blue-50 p-6 rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-2">🎉 History Mastered! Ready for Applications?</h3>
+          <p><strong>Next: Hashes in Blockchain</strong></p>
+          <p>Now let's see how Bitcoin and Ethereum actually use these hash functions in practice.</p>
+          <a href="blockchain.html" class="inline-block mt-4 bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Continue to Lesson 3 →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+  <script>
+    const yesButton = document.getElementById('yes-btn');
+    const noButton = document.getElementById('no-btn');
+    const nextLessonDiv = document.getElementById('next-lesson');
+    const understandingSection = document.querySelector('.understanding-check');
+
+    function showNextLesson() {
+      nextLessonDiv.classList.remove('hidden');
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+      const questionText = understandingSection.querySelector('p');
+      if (questionText) questionText.style.display = 'none';
+      localStorage.setItem('lesson2_complete', 'true');
+    }
+
+    function askToReview() {
+      alert("Take your time with the story! Pay attention to why each algorithm was created and why it eventually became insecure (or remained secure).");
+    }
+
+    yesButton.addEventListener('click', showNextLesson);
+    noButton.addEventListener('click', askToReview);
+
+    if (localStorage.getItem('lesson2_complete') === 'true') {
+      showNextLesson();
+    }
+  </script>
+
+</body>
+</html>

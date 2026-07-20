@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HashGuard Lite</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./hash_management.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+
+        <header class="brand-header">
+            <div class="brand">
+                <img 
+                    src="assets/logo.png" 
+                    alt="Vol Lite logo"
+                    class="logo">
+
+                <h1>Vol Lite</h1>
+
+            </div>
+        </header>
+
+
+        <p class="subtitle" style="margin-bottom: 75px;">
+
+            Preserve the integrity and existence of digital files
+            through cryptographic timestamping.
+
+            <br><br>
+
+            A cryptographic hash creates a unique fingerprint of
+            a file. By anchoring this fingerprint on a blockchain,
+            it becomes possible to prove that a document existed
+            at a specific moment in time.
+
+            <br><br>
+
+            Whether you want to prove the existence of an important
+            document, protect intellectual property, verify the
+            authenticity of a file, or keep a permanent record of
+            information, blockchain timestamping provides a way to
+            create a trusted proof of existence.
+
+        </p>
+
+    </header>
+
+
+
+
+
+    <!-- ==================================================
+         FILE SELECTION
+    =================================================== -->
+
+
+    <section>
+
+
+        <div class="file-box">
+
+
+            <h2>
+                Select a file
+            </h2>
+
+
+            <p>
+                Choose a document, image, or any other file.
+                The file will be processed locally in your browser.
+            </p>
+
+
+            <input
+                type="file"
+                id="fileInput"
+            >
+            <div id="fileInfo"></div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- ==================================================
+         HASH CONFIGURATION
+    =================================================== -->
+
+    <section id="hashSection" hidden>
+
+        <div class="hash-toolbar">
+
+            <!-- Hash algorithms -->
+
+            <div class="algorithm-selector">
+
+                <button
+                    class="algorithm-button"
+                    data-algorithm="SHA-1">
+
+                    SHA-1 ⚠️
+
+                </button>
+
+                <button
+                    class="algorithm-button active"
+                    data-algorithm="SHA-256">
+
+                    SHA-256
+
+                </button>
+
+                <button
+                    class="algorithm-button"
+                    data-algorithm="SHA-384">
+
+                    SHA-384
+
+                </button>
+
+                <button
+                    class="algorithm-button"
+                    data-algorithm="SHA-512">
+
+                    SHA-512
+
+                </button>
+
+            </div>
+
+            <!-- Generate hash -->
+
+            <button
+                id="hashButton"
+                class="primary-button">
+
+                Generate Hash
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         HASH RESULT
+    =================================================== -->
+
+    <section id="hashResultSection" hidden>
+
+        <h2>
+            Hash Result
+        </h2>
+
+        <div class="hash-box">
+
+            <span id="hash">
+
+                -
+
+            </span>
+
+            <button
+                id="copyButton"
+                class="copy-button"
+                title="Copy hash">
+
+                📋
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         BITCOIN INFORMATION
+    =================================================== -->
+
+
+    <section id="bitcoinSection" hidden>
+
+
+        <h2>
+            Bitcoin Publication Estimate
+        </h2>
+
+
+
+        <div class="bitcoin-grid">
+
+
+            <div class="info-card">
+
+
+                <h3>
+                    🟠 BTC Fee
+                </h3>
+
+
+                <div
+                    id="fee"
+                    class="info-value"
+                >
+
+                    -
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="info-card">
+
+
+                <h3>
+                    ₿ BTC Price
+                </h3>
+
+
+                <div
+                    id="btcPrice"
+                    class="info-value"
+                >
+
+                    -
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="info-card">
+
+
+                <h3>
+                    Estimated Cost
+                </h3>
+
+
+                <div
+                    id="cost"
+                    class="info-value"
+                >
+
+                    -
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <!--
+            Explanation of the estimation.
+
+            This text applies to the whole Bitcoin calculation,
+            not only to one specific card.
+        -->
+
+
+        <p
+            id="costExplanation"
+            class="cost-explanation"
+        >
+
+            * Estimate based on a 32-byte hash
+            (~177 vBytes Bitcoin transaction).
+
+            Actual cost varies with network fees
+            and publication method.
+
+        </p>
+
+
+
+
+
+        <div class="status-card">
+
+
+            Status:
+
+            <span id="status">
+
+                Ready.
+
+            </span>
+
+
+        </div>
+
+
+
+    </section>
+
+
+    <!-- ==================================================
+         FUTURE
+    =================================================== -->
+
+
+    <section style="margin-top: 100px;">
+
+        <br><br>
+
+        <h2>
+            Future Features
+        </h2>
+
+
+        <p class="subtitle">
+
+
+            HashGuard Lite is the first step of a larger project.
+
+
+            <br><br>
+
+
+            Future versions will explore:
+
+            <br><br>
+
+
+            • Bitcoin transaction creation.
+
+            <br>
+
+            • OP_RETURN integration.
+
+            <br>
+
+            • Wallet connection.
+
+            <br>
+
+            • Direct blockchain publication.
+
+
+            <br><br>
+
+
+
+        </p>
+
+        <p class="subtitle"><u>
+            If you are interested in publishing your own files
+            on-chain, feel free to contact me or Nabu Enterprise.
+        </u></p>
+
+    </section>
+
+
+
+
+
+    <!-- ==================================================
+         RELATED PROJECTS FOOTER
+    =================================================== -->
+
+
+    <footer class="projects-footer">
+
+
+
+        <h2>
+            Projects Related
+        </h2>
+
+
+        <p>
+            Explore other of our projects related to blockchain,
+            cryptography and Web3 fundamentals.
+        </p>
+
+
+
+        <div class="projects-grid">
+
+
+            <a href="#" class="project-link">
+
+                Understanding Hash Fundamentals
+
+            </a>
+
+
+
+            <a href="#" class="project-link">
+
+                Understanding Peer-2-Peer Networks
+
+            </a>
+
+
+            <a href="assets/doc-1.png" class="project-link">
+
+                📄 Related Documentation - HashGuard
+
+            </a>
+
+
+            <a href="readme.md" class="project-link">
+
+                📄 Project README
+
+            </a>
+
+
+            <a href="https://github.com/Barbedouce7/bip39-cardano/" class="project-link">
+
+                Cardano Paper Wallet
+
+            </a>
+
+            <a href="https://baymax-77.github.io/BlockChain/blogs-hub/index.html" class="project-link">
+
+                Web3 Blogs
+
+            </a>
+
+            <a href="#" class="project-link">
+
+                More projects coming soon...
+
+            </a>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+
+</div>
+
+
+
+
+
+<script type="module" src="./app.js"></script>
+
+
+</body>
+
+</html>

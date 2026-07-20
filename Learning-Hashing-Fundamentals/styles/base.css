@@ -1,0 +1,124 @@
+/* =======================
+   BASE STYLES
+   (Reset + Fundamentals)
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --color-dark: #f8f9fa;
+    --color-card: #ffffff;
+    --color-light: #e9ecef;
+    
+    --text-white: #212529;
+    --text-gray: #495057;
+    --text-light-gray: #6c757d;
+    
+    --blue: #0d6efd;
+    --green: #198754;
+    --purple: #6f42c1;
+    --orange: #fd7e14;
+    --red: #dc3545;
+    --yellow: #ffc107;
+    
+    --border: #dee2e6;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--color-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px; /* Aumentado de 1000px a 1400px */
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+/* Puse para el index especificamente el max widht en 1200. */
+
+#container-index {
+    max-width: 1050px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+}
+
+h1 { 
+    font-size: 2.5rem; 
+    color: var(--text-white);
+}
+
+h2 { 
+    font-size: 2rem; 
+    color: var(--text-white);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+h3 { 
+    font-size: 1.5rem; 
+    color: var(--text-gray);
+}
+
+h4 { 
+    font-size: 1.2rem; 
+    color: var(--text-gray);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.subtitle {
+    color: var(--text-light-gray);
+    font-size: 1.2rem;
+}
+
+strong {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* Code styling */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: var(--color-light);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--green);
+    font-size: 0.95em;
+}
+
+/* Utility class */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 { margin-top: var(--space-xl); }
+.mb-3 { margin-bottom: var(--space-xl); }
