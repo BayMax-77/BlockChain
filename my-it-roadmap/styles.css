@@ -1,0 +1,44 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 17px;
+  color: #222;
+  background: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 22px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.selector {
+  text-align: right;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+
+.selector a {
+  text-decoration: none;
+  color: #444;
+  padding: 4px 6px;
+  margin-left: 6px;
+}
+
+.selector a.active {
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #000;
+}

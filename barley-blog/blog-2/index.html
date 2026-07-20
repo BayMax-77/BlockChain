@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barley Blog-2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Barley Has Taken Root</h1>
+	<img src="imgs/Barley-roots.png"> <br><br>
+
+	<p>There’s a strange moment in every project. <br>
+	The moment when it stops being an idea… and starts becoming something alive.</p>
+
+	<p>On February 1st, I announced a deadline: <a href="https://baymax-77.github.io/BlockChain/barley-blog/index.html" target="_blank">March 1st. The beta version of Barley would be live.</a> <br>
+	Today is February 15th. <strong>50% of the time has already passed.</strong></p>
+
+	<p>And somewhere between enthusiasm and doubt, Barley has taken root.</p>
+
+	<br>
+
+	<p>The first week was noise.
+	Messages. Calls. Conversations.</p>
+	<p>I told friends in person, online… even in places where maybe you’re not supposed to pitch a blockchain idea.</p>
+
+	<p>Everyone was supportive. Encouraging. And that’s when I realized something ...</p>
+
+	<p><strong>Applause feels like progress. But i know it isn’t.</strong></p>
+
+	<p>There’s a reason people say: <u>"keep your goals to yourself."</u></p>
+
+	<p>When you announce a project publicly, your brain can release a small dose of satisfaction — almost as if the work had already been done.</p>
+
+	<p>If you’re curious about the psychology behind this idea, Derek Sivers explains it brilliantly in his talk: <a href="https://youtu.be/NHopJHSlVo4" target="_blank">Keep your goals to yourself.</a></p>
+
+
+	<p>But what fascinated me even more is something I studied back in 2023 while diving into neuroscience and dopamine. It involves rats 🐁.</p>
+
+	<p>In a study published in Frontiers in Behavioral Neuroscience: <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2019.00275/full" target="_blank">A Novel Weight Lifting Task for Investigating Effort and Persistence in Rats</a>, Researchers designed a simple but powerful experiment.</p>
+
+	<p>If you don’t have an hour and a half to read the full paper, here’s the part that matters for me:</p>
+
+	<details>
+	<summary><strong>Study Summary – Reward Before vs. After Effort</strong></summary>
+
+	<ul>
+		<li>The researchers designed a weight-lifting task (WLT). Rats had to pull a rope 30 cm to receive a sugar reward. Weights were progressively added to increase difficulty.</li>
+
+		<li>Two groups were compared:
+		<ul>
+			<li><strong>Group A:</strong> Rats received sugar <em>after</em> successfully pulling the weight (reward after effort).</li>
+			<li><strong>Group B:</strong> Rats received sugar <em>before</em> they had to pull (reward before effort).</li>
+		</ul>
+		</li>
+
+		<li><strong>Main findings:</strong>
+		<ul>
+			<li>Group A persisted longer and managed heavier weights.</li>
+			<li>Group B quit earlier and showed lower persistence.</li>
+			<li>As weights increased, failed attempts increased and task engagement decreased.</li>
+		</ul>
+		</li>
+
+		<li><strong>Conclusion:</strong>
+		Reward contingent on success (after effort) increases persistence.
+		Reward given before effort reduces motivation and accelerates quitting.
+		</li>
+	</ul>
+	</details>
+
+	<br><br>
+
+	<p>The first week after announcing Barley, I realized something uncomfortable. <br>
+	Applause wouldn’t take me anywhere.</p>
+
+	<p>So this time, I decided to work before seeking the reward.</p>
+
+	<p>If I let myself enjoy it too much, I would slowly become Group B. <br>
+	Reward before effort. And I refuse to peak in week one.</p>
+
+	<br> <p>...</p>
+
+	<p>Then reality arrived. Not softly.</p>
+
+	<p>Every morning I opened my notes, and the list had grown.</p>
+
+	<ul>
+		<li>More problems.</li>
+		<li>More questions.</li>
+		<li>More things I didn’t fully know how to build yet.</li>
+	</ul>
+
+	<p>At one point I even thought about remixing Jay-Z’s “99 Problems.” song. <br>
+	Because at that stage, I definitely had a few.</p>
+
+	<p>There’s an old joke about a math book that committed suicide because it had too many problems.<br>
+	For the first time, I understood the book.</p>
+
+	<br>
+
+	<p>The questions weren’t abstract anymore. They were architectural.</p>
+
+	<ul>
+		<li>How do users communicate securely?</li>
+		<li>How do validations remain fair?</li>
+		<li>How do nodes interact with the chain on demand?</li>
+		<li>How do I protect user data without compromising transparency?</li>
+	</ul>
+
+	<p>And somewhere between JavaScript tutorials, protocol diagrams, and pushing code that wasn’t ready… <br>
+	I asked myself something brutally simple:</p>
+
+	<p><strong>How the hell am I going to ship this by March 1st?</strong></p>
+
+
+	<img src="imgs/Man facing deadline.png" alt="Image showing Deadline for a man" width="1100px" style="align-items: center;">
+
+	<br><br>
+
+	<div class="split-block">
+		<div class="split-text">
+			<p>I had two options. Panic… or decide.</p>
+			<p>So instead of losing my mind, I made decisions.</p>
+			<p class="highlight">Decisions that would simplify my life.</p>
+		</div>
+
+		<div class="split-image">
+			<img src="imgs/first do it then improve it.jpg" alt="Doing first, improving later">
+		</div>
+	</div>
+
+	<br><br><br><br><hr>
+
+
+	<h4>The first decision was slightly insane.</h4>
+
+	<p><u>I removed the backend.</u></p>
+
+	<p>Yes! A blockchain project… without a backend.</p>
+
+	<p>If that sounds hilarious, that’s because it is. At least from a traditional perspective.</p>
+
+	<p>But this isn’t a venture-funded startup. It’s a beta. An experiment. <br>  
+	A controlled sandbox where the goal isn’t perfection — it’s learning.</p>
+
+	<p>I realized something simple: I don’t need to solve every problem on day one.</p>
+
+	<ul>
+		<li>I don’t need peer-to-peer networking yet.</li>
+		<li>I don’t need a complex UTXO model.</li>
+		<li>I don’t need production-level infrastructure.</li>
+	</ul>
+
+
+	<p>I need something that works. <u>Public. Transparent. Simple.</u></p>
+
+	<p style="color: blue;">So Barley’s first version will live entirely on the front end. Readable pages. Linked blocks. A visible ledger.</p>
+
+	<p>No heavy architecture. No invisible machinery. <b>Just structure.</b></p>
+
+	<p>In a way, this first version is almost Web 1.0. <br>
+		- Static.  <br>
+		- Readable.  <br>
+		- Minimal interaction.</p>
+
+	<p>Then will come Web 2.0 —  real user interaction. Smoother mechanics. <br>
+	And eventually, with E-Buny at the end of the year,  Web 3.0.</p>
+	
+	<p>Progressive evolution. <u>Not jumping to the future before earning it.</u></p>
+
+	<br> <br>
+
+	<p>But removing the backend created another problem : If there’s no backend…  <br>
+		- how do users communicate? <br>
+		- How do transactions happen? <br>
+		- How do validations get recorded?</p>
+
+	<p>A blockchain without coordination is just a static page.</p>
+
+	<h4>So I made my second “slightly insane” decision.</h4>
+
+	<p>We’re building a small private server on Matrix.</p>
+
+	<p><u>Only ten people. Bots configured. Simple automation.</u></p>
+
+	<p style="color: blue">It’s not decentralized perfection. It’s controlled experimentation.</p>
+
+	<p>And honestly... It’s also an excuse to learn Matrix properly.</p>
+
+	<p>March 1st isn’t only about Barley. Other platforms are shifting too.<br>
+	Some of them in ways I don’t fully agree with (Discord).</p>
+
+	<p>I’d rather adapt now than complain later.</p>
+	
+	<br><br>
+
+
+	<img src="imgs/desition 3 eyes 1.jpeg" alt="next decision + take a break" width="1000px">
+
+	<br><br>
+
+	<h4>The third decision was about user pressure management.</h4>
+
+	<p>Instead of launching with ten users at once,  we’ll start with two.</p>
+
+	<p>Yes ! Two people. Then two more the following week. And two more after that. Growth in layers.</p>
+
+	<img src="imgs/users-evolution.svg" alt="svg table user increase" width="1000px">
+
+
+	<div class="split-block">
+		<div class="split-text">
+			<p>I promised a launch date. I never promised perfection.</p>
+			<p>Reducing the number of moving pieces reduces the number of ways things can break.</p>
+			<p>And suddenly… the pressure felt manageable.</p>
+			<p>After all, as the old strategy says: <span class="highlight">“Divide and conquer.”</span></p>
+
+		</div>
+		
+		<div class="split-image">
+			<img src="imgs/Stairs-easier.jpg" alt="Stairs becoming easier step by step">
+		</div>
+	</div>
+
+
+
+	<br><br><hr><br><br>
+
+	<h4>Then came the economics.</h4>
+
+	<p>If Barley was going to be alive, it needed circulation. <br>
+	Not hype, Not speculation. Structure.</p>
+
+	<p>As I defined from scratch : Over ten weeks, 100 Barleys will be created.<br>
+	That’s it. No hidden minting. No surprise supply.</p>
+
+	<ul>
+		<li>Fifty will be distributed through a reward protocol — earned by validators.</li>
+		<li>Thirty-five will flow through a faucet.</li>
+		<li>Slow. Predictable. Algorithmic.</li>
+		<li>Ten will be given at entry — one per user. And five will go to the owner.</li>
+	</ul>
+
+
+	<p>But even that comes with a constraint. <br>
+	After week four,  I won’t be allowed to benefit from reward distributions.</p>
+
+	<p>If this is an experiment,  it has to be fair. No shortcuts.  No silent advantages.</p> <br>
+
+	<img src="imgs/table-distribution.svg" alt="Barley Economic Structure">
+
+	<br>
+
+	<p>Then I did something even more experimental.</p>
+
+	<p><b>I made Barley tradable.</b></p>
+
+	<p>Not with promises. With real tokens. <br>
+	I put 75% of my own peny coins tokens into the system.</p>
+
+	<p>No complicated tokenomics. No artificial scarcity. Just math.</p>
+
+	<p>The price depends on the ratio inside the pool. <br>
+		If there are 10 Sepolia ETH and 10 Barleys, then 1 Barley = 1 SepETH.</p>
+
+	<p>If Barleys increase, each one becomes cheaper. <br>
+	If SepETH increases, Barley becomes more expensive.</p>
+
+	<p><u>Supply. Demand. That’s it.</u></p>
+
+	<p>The sell price is 90% of the buy price. Not to extract value — but to stop easy looping and farming.</p>
+
+	<p>This isn’t about building a perfect market. It’s about watching what happens when something experimental becomes tradable.</p>
+
+	<img src="imgs/tokenomics-explainations.svg" alt="graphic showing tokenomics principe">
+
+
+	<br><br><hr><br>
+
+
+	<p>At some point, I had to remind myself of something obvious: <strong>This is a beta.</strong></p>
+
+	<p>It doesn’t need to solve double spending on day one. <br>
+	It doesn’t need a peer-to-peer protocol immediately. <br>
+	It doesn’t need a 40-page whitepaper.</p>
+	
+	<p><b>It only needs to work.</b></p>
+
+
+	<ul> 
+		<li>A simple public ledger.</li>
+		<li>Blocks linked together.</li>
+		<li>Visible.</li>
+		<li>Transparent.</li>
+		<li>Alive.</li>
+	</ul>
+
+	<p>Nothing more !</p>
+
+	<p>That’s when I remembered a principle I’ve always respected when things get hard : <strong>KISS — Keep It Simple and Stupid.</strong></p>
+
+	<p>And strangely enough…  it reminded me of a rocket engine.</p>
+
+	<p>Yes. A rocket engine.</p>
+
+	<p>You might be wondering:  What da heck does a Raptor engine have to do with a blockchain experiment? <br>
+	Stay with me.</p>
+
+	<img src="imgs/keep scroling.jpeg" alt="a picture to motivate readers to keep scrolling">
+
+	<br>
+
+	<p>Between 2019 and 2024, the evolution of SpaceX’s Raptor Engine is a masterclass in innovation.</p>
+
+	<p>It went from something visually overwhelming  to something radically simplified.</p>
+
+	<p>From the complexity of Raptor 1 to the simplicity of Raptor 3, it’s proof that <b>less is more.</b><br>
+		The transformation shows the power of simplification and optimization.</p>
+	<p>Fewer parts.  Cleaner design. Less visible chaos. <br>
+		Fewer parts mean fewer failure points, lower costs, and faster production. </p>
+
+	<p>As Elon Musk puts it, <span style="color: red;">“The best component is no component.”</span></p>
+
+	<p>This isn’t just about rockets :  Removing unnecessary complexity in anything we build can be as impactful as adding new technology. <br>
+		A powerful reminder: <u>simplify, optimize, and innovate!</u></p>
+
+	<br>
+	<img src="imgs/raptor 1 - 3.jpeg" alt="raptor comparison"> 
+	<img src="imgs/raptor info.png" alt="raptor info table">
+
+	<br><br>
+
+	<blockquote>
+		<p>
+			"This photograph of SpaceX’s Raptor rocket engine evolution is a powerful reminder of what’s possible when optimization and efficiency are prioritized. Just as SpaceX reimagined propulsion systems to achieve greater performance and reliability, businesses—especially IT teams—must refine their operations to create lean, technically integrated, cost-efficient systems that deliver maximum value.
+		</p>
+		<p>
+			This will be next year's call to arms for technology providers. Helping clients succeed means assisting them in meeting this challenge.
+		</p>
+		<p>
+			I'll also add that some organizations have gone in the opposite direction, creating overly complex, wasteful, inefficient systems (like a Rube Goldberg machine). This transformation from SpaceX's Raptor 1 to Raptor 3 illustrates the profound power of simplicity, emphasizing the importance of subtracting the obvious and adding the meaningful.
+		</p>
+		<p>
+			In the realm of engineering, complexity is often seen as a mark of sophistication. Simple can be harder than complex; it requires effort to achieve clarity and simplicity in thinking. This serves as a great inspiration for the software industry to ensure we don’t accumulate what doesn't contribute to meaningful product goals."
+		</p>
+		<p style="color: aqua;">@Mark Edwards</p>
+	</blockquote>
+
+	<br><br>
+
+
+	<img src="imgs/comment on raptor 1.png" alt="the opinion of someone about the raptor evolution">
+
+
+
+	<br>
+
+	<p>And this isn’t just about rockets.</p>
+
+	<p><b>Removing unnecessary complexity in anything we build  can be more powerful than adding new features.</b> <br>
+	Simplify.  Optimize. Then innovate. <br>
+	<b>That’s the philosophy Barley needed.</b></p>
+
+	<br> <br> <hr>
+
+	<h2>In Synthesis</h2>
+
+	<p>This week wasn’t about adding more.</p>
+
+	<p>It was about removing.</p>
+
+	<ul>
+		<li>Removing backend complexity.</li>
+		<li>Reducing the initial surface area.</li>
+		<li>Simplifying distribution.</li>
+		<li>Designing something that can breathe before it has to run.</li>
+	</ul>
+
+	<p>Barley doesn’t need to be perfect on March 1st. <br>
+	<b>It just needs to exist.</b></p>
+
+	<p style="color: red; font-weight: 900;">Alive. Simple. Understandable.</p>
+
+	<p>One hundred Barleys over ten weeks.  <br>
+	A reward system tied to effort.  <br>
+	A faucet flowing progressively.  <br>
+	A small, controlled group growing in layers.</p>
+
+	<p>No illusion of scale. No artificial sophistication.</p>
+
+	<p style="color: green; font-weight: bold;">Just learning by building.</p>
+
+	<br>
+
+	<img src="imgs/minimalist last break.jpeg" alt="last break">
+
+	<p>Before closing, I want to give a quiet shoutout to the creator of a project called <strong>CONTRAST</strong>.</p>
+
+	<p>He’s working on simplifying complex blockchain mechanics in a way that deeply resonates with this philosophy.</p>
+
+	<p>If you're curious about ledgers, peer-to-peer protocols, and what actually happens under the hood,  I recommend exploring his <a href="https://github.com/Seigneur-Machiavel/contrast">GitHub Repository.</a></p>
+
+	<p>Go say hello from me 😎.</p>
+
+	<br>
+
+	<p>Barley has taken root. Now let’s see how it grows.</p>
+	
+	<p style="color: blue; font-weight: bold;">See you on March 1st 😜.</p>
+
+</body>
+</html>

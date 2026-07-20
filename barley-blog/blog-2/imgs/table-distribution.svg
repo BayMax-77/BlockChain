@@ -1,0 +1,151 @@
+<svg width="2400" height="1200" viewBox="0 0 2400 1200" xmlns="http://www.w3.org/2000/svg">
+
+<rect width="2400" height="1200" fill="#000000"/>
+
+<!-- Title -->
+<text x="1200" y="70" text-anchor="middle" fill="white" font-size="44"
+font-family="-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Arial">
+Barley Economic Structure
+</text>
+
+<!-- ===================== -->
+<!-- EXTRA LARGE DISTRIBUTION BAR -->
+<!-- Total width = 2000px -->
+<!-- 50% = 1000 | 35% = 700 | 10% = 200 | 5% = 100 -->
+<!-- ===================== -->
+
+<rect x="200" y="120" width="1000" height="70" fill="#30D158"/>
+<rect x="1200" y="120" width="700" height="70" fill="#FFD60A"/>
+<rect x="1900" y="120" width="200" height="70" fill="#3B82F6"/>
+<rect x="2100" y="120" width="100" height="70" fill="#00FFFF"/>
+
+<text x="700" y="165" text-anchor="middle" fill="black" font-size="22">50% Validators</text>
+<text x="1550" y="165" text-anchor="middle" fill="black" font-size="22">35% Faucet</text>
+<text x="2000" y="165" text-anchor="middle" fill="black" font-size="22">10% Users</text>
+<text x="2150" y="165" text-anchor="middle" fill="black" font-size="22">5% Owner</text>
+
+<line x1="150" y1="230" x2="2250" y2="230" stroke="#1f1f1f" stroke-width="2"/>
+
+<!-- WEEK LABELS -->
+
+<g fill="#888" font-size="24"
+font-family="-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Arial">
+
+<text x="300" y="280" text-anchor="middle">W1</text>
+<text x="500" y="280" text-anchor="middle">W2</text>
+<text x="700" y="280" text-anchor="middle">W3</text>
+<text x="900" y="280" text-anchor="middle">W4</text>
+<text x="1100" y="280" text-anchor="middle">W5</text>
+<text x="1300" y="280" text-anchor="middle">W6</text>
+<text x="1500" y="280" text-anchor="middle">W7</text>
+<text x="1700" y="280" text-anchor="middle">W8</text>
+<text x="1900" y="280" text-anchor="middle">W9</text>
+<text x="2100" y="280" text-anchor="middle">W10</text>
+
+</g>
+
+<!-- Vertical separators -->
+
+<line x1="400" y1="300" x2="400" y2="1050" stroke="#1f1f1f"/>
+<line x1="600" y1="300" x2="600" y2="1050" stroke="#1f1f1f"/>
+<line x1="800" y1="300" x2="800" y2="1050" stroke="#1f1f1f"/>
+<line x1="1000" y1="300" x2="1000" y2="1050" stroke="#1f1f1f"/>
+<line x1="1200" y1="300" x2="1200" y2="1050" stroke="#1f1f1f"/>
+<line x1="1400" y1="300" x2="1400" y2="1050" stroke="#1f1f1f"/>
+<line x1="1600" y1="300" x2="1600" y2="1050" stroke="#1f1f1f"/>
+<line x1="1800" y1="300" x2="1800" y2="1050" stroke="#1f1f1f"/>
+<line x1="2000" y1="300" x2="2000" y2="1050" stroke="#1f1f1f"/>
+<line x1="2200" y1="300" x2="2200" y2="1050" stroke="#1f1f1f"/>
+
+<!-- ===================== -->
+<!-- EMOJI STACKS (ALL WEEKS PRESERVED) -->
+<!-- ===================== -->
+
+<g font-size="48" text-anchor="middle">
+
+<!-- W1 -->
+<text x="300" y="340">🌾</text><text x="300" y="395">🌾</text><text x="300" y="450">🌾</text>
+<text x="300" y="505">🌾</text><text x="300" y="560">🌾</text><text x="300" y="615">🌾</text>
+<text x="300" y="670">🍎</text><text x="300" y="725">🍎</text><text x="300" y="780">🍎</text>
+<text x="300" y="835">🪙</text>
+
+<!-- W2 -->
+<text x="500" y="340">🌾</text><text x="500" y="395">🌾</text><text x="500" y="450">🌾</text>
+<text x="500" y="505">🌾</text><text x="500" y="560">🌾</text>
+<text x="500" y="615">🍎</text><text x="500" y="670">🍎</text>
+<text x="500" y="725">🪙</text><text x="500" y="780">🪙</text><text x="500" y="835">🪙</text>
+
+<!-- W3 -->
+<text x="700" y="340">🌾</text><text x="700" y="395">🌾</text><text x="700" y="450">🌾</text>
+<text x="700" y="505">🌾</text>
+<text x="700" y="560">🍎</text><text x="700" y="615">🍎</text>
+<text x="700" y="670">🪙</text><text x="700" y="725">🪙</text>
+<text x="700" y="780">🪙</text><text x="700" y="835">🪙</text>
+
+<!-- W4 -->
+<text x="900" y="340">🌾</text><text x="900" y="395">🌾</text><text x="900" y="450">🌾</text>
+<text x="900" y="505">🍎</text>
+<text x="900" y="560">🪙</text><text x="900" y="615">🪙</text>
+<text x="900" y="670">🪙</text><text x="900" y="725">🪙</text>
+<text x="900" y="780">🪙</text><text x="900" y="835">🪙</text>
+
+<!-- W5 -->
+<text x="1100" y="340">🌾</text><text x="1100" y="395">🌾</text>
+<text x="1100" y="450">🍎</text><text x="1100" y="505">🍎</text>
+<text x="1100" y="560">🪙</text><text x="1100" y="615">🪙</text>
+<text x="1100" y="670">🪙</text><text x="1100" y="725">🪙</text>
+<text x="1100" y="780">🪙</text><text x="1100" y="835">🪙</text>
+
+<!-- W6 -->
+<text x="1300" y="340">🌾</text><text x="1300" y="395">🌾</text><text x="1300" y="450">🌾</text>
+<text x="1300" y="505">🪙</text><text x="1300" y="560">🪙</text>
+<text x="1300" y="615">🪙</text><text x="1300" y="670">🪙</text>
+<text x="1300" y="725">🪙</text><text x="1300" y="780">🪙</text>
+<text x="1300" y="835">💎</text>
+
+<!-- W7 -->
+<text x="1500" y="340">🌾</text><text x="1500" y="395">🌾</text><text x="1500" y="450">🌾</text>
+<text x="1500" y="505">🪙</text><text x="1500" y="560">🪙</text>
+<text x="1500" y="615">🪙</text><text x="1500" y="670">🪙</text>
+<text x="1500" y="725">🪙</text><text x="1500" y="780">🪙</text>
+<text x="1500" y="835">💎</text>
+
+<!-- W8 -->
+<text x="1700" y="340">🌾</text><text x="1700" y="395">🌾</text><text x="1700" y="450">🌾</text>
+<text x="1700" y="505">🪙</text><text x="1700" y="560">🪙</text>
+<text x="1700" y="615">🪙</text><text x="1700" y="670">🪙</text>
+<text x="1700" y="725">🪙</text><text x="1700" y="780">🪙</text>
+<text x="1700" y="835">💎</text>
+
+<!-- W9 -->
+<text x="1900" y="340">🌾</text><text x="1900" y="395">🌾</text><text x="1900" y="450">🌾</text>
+<text x="1900" y="505">🪙</text><text x="1900" y="560">🪙</text>
+<text x="1900" y="615">🪙</text><text x="1900" y="670">🪙</text>
+<text x="1900" y="725">🪙</text><text x="1900" y="780">🪙</text>
+<text x="1900" y="835">💎</text>
+
+<!-- W10 -->
+<text x="2100" y="340">🌾</text><text x="2100" y="395">🌾</text><text x="2100" y="450">🌾</text>
+<text x="2100" y="505">🪙</text><text x="2100" y="560">🪙</text>
+<text x="2100" y="615">🪙</text><text x="2100" y="670">🪙</text>
+<text x="2100" y="725">🪙</text><text x="2100" y="780">🪙</text>
+<text x="2100" y="835">💎</text>
+
+</g>
+
+<!-- Legend -->
+
+<line x1="300" y1="1080" x2="2200" y2="1080" stroke="#1f1f1f" stroke-width="2"/>
+
+<g font-size="26"
+font-family="-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Arial"
+fill="white">
+
+<text x="700" y="1120">🪙 Validators</text>
+<text x="1050" y="1120">🌾 Faucet</text>
+<text x="1400" y="1120">🍎 New Users</text>
+<text x="1750" y="1120">💎 Owner</text>
+
+</g>
+
+</svg>
